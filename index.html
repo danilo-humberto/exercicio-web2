@@ -1,0 +1,81 @@
+
+Conversa aberta. Uma mensagem lida.
+
+Pular para o conteúdo
+Como usar o E-mail de Instituto Federal de Pernambuco com leitores de tela
+
+36 de 326
+código web2
+Caixa de entrada
+
+Danilo Humberto paz de melo <dhpm@discente.ifpe.edu.br>
+seg., 18 de set., 16:22
+para mim
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="estado" id="estado" onchange="adicionarCidade()">
+    <option value="">Selecione um Estado</option>
+    <option value="1">PB</option>
+    <option value="2">PE</option>
+    <option value="3">RN</option>
+    </select>
+    <br>
+    <select name="cidade" id="cidade"></select>
+
+    <script>
+        var select = document.querySelector("#estado")
+        var cidade = document.querySelector("#cidade")
+        select.addEventListener("change", function(){
+            if(select.value == "1"){
+                cidade.textContent = ''
+                var optionpb = document.createElement("option")
+                optionpb.textContent = "Água Branca"
+                cidade.appendChild(optionpb)
+
+                var option1pb = document.createElement("option")
+                option1pb.textContent = "Alagoinha"
+                cidade.appendChild(option1pb)
+
+                var option2pb = document.createElement("option")
+                option2pb.textContent = "Areial"
+                cidade.appendChild(option2pb)
+            }
+            else if(select.value == "2"){
+                cidade.textContent = ''
+                var option = document.createElement("option")
+                option.textContent = "Recife"
+                cidade.appendChild(option)
+
+                var option1 = document.createElement("option")
+                option1.textContent = "Camaragibe"
+                cidade.appendChild(option1)
+
+                var option2 = document.createElement("option")
+                option2.textContent = "Petrolina"
+                cidade.appendChild(option2)
+            }
+            else if(select.value == "3"){
+                cidade.textContent = ''
+                var optionRn = document.createElement("option")
+                optionRn.textContent = "Natal"
+                cidade.appendChild(optionRn)
+
+                var option1Rn = document.createElement("option")
+                option1Rn.textContent = "Macau"
+                cidade.appendChild(option1Rn)
+
+                var option2Rn = document.createElement("option")
+                option2Rn.textContent = "Touros"
+                cidade.appendChild(option2Rn)
+            }
+        })
+    </script>
+</body>
+</html>

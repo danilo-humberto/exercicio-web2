@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,35,80,1) 35%, rgba(58,0,94,1) 100%);
+
+        }
+
+        #head{
+            padding: 30px;
+            border: 1px solid white;
+            text-align: center;
+            margin: 20px 100px 0 100px
+        }
+
+        #content {
+            padding: 60px;
+            margin: 0 100px 0 100px;
+            border: 1px solid white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        select {
+            width: 25em;
+            height: 50px;
+            margin: 15px;
+            box-shadow: 3px 3px 5px white;
+        }
+
+        #content-text-button {
+            display: flex;
+        }
+
+        textarea{
+            width: 25em;
+            margin-left: 80px;
+            margin-right: 20px;
+            box-shadow: 3px 3px 5px white;
+        }
+
+        #button{
+            width: 60px;
+            border-radius: 15px;
+            outline: none;
+            box-shadow: 5px 21px 24px -15px rgba(0,0,0,0.66);
+            cursor: pointer;
+        }
+
+        #button:hover{
+            box-shadow: 5px 21px 24px -15px rgba(217, 215, 215, 0.66);
+        }
+    </style>
+</head>
+<body>
+    <div id="head">
+        <h1 style="color: white;">Application</h1>
+    </div>
+
+    <div id="content">
+        <select name="carros" id="carros">
+            <option value="">Selecione uma marca de carro</option>
+            <option value="nissan">Nissan</option>
+            <option value="lamborguini">Lamborguini</option>
+            <option value="masserati">Masserati</option>
+        </select>
+        <select name="modelos-carro" id="modelos-carro"></select>
+        
+        <div id="content-text-button">
+            <textarea name="coments" id="coments" cols="30" rows="3">Digite um comentário.</textarea>
+            <button id="button">Enviar</button>
+        </div>
+    </div>
+</body>
+</html>
