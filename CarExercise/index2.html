@@ -34,10 +34,15 @@
         }
 
         select {
+            padding: 15px;
             width: 25em;
             height: 50px;
             margin: 15px;
             box-shadow: 3px 3px 5px white;
+        }
+
+        #modelos-carro {
+            margin-bottom: 30px;
         }
 
         #content-text-button {
@@ -45,6 +50,7 @@
         }
 
         textarea{
+            padding: 10px;
             width: 25em;
             margin-left: 80px;
             margin-right: 20px;
@@ -62,6 +68,19 @@
         #button:hover{
             box-shadow: 5px 21px 24px -15px rgba(217, 215, 215, 0.66);
         }
+
+        #tasks {
+            padding: 15px;
+            width: 21em;
+            height: 50px;
+            background-color: white;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+        
+        .hide {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -72,16 +91,20 @@
     <div id="content">
         <select name="carros" id="carros">
             <option value="">Selecione uma marca de carro</option>
+            <option value="porsche">Porsche</option>
+            <option value="ferrari">Ferrari</option>
             <option value="nissan">Nissan</option>
-            <option value="lamborguini">Lamborguini</option>
-            <option value="masserati">Masserati</option>
         </select>
         <select name="modelos-carro" id="modelos-carro"></select>
         
         <div id="content-text-button">
-            <textarea name="coments" id="coments" cols="30" rows="3">Digite um comentário.</textarea>
+            <textarea name="coments" id="coments" cols="30" rows="3" placeholder="Digite um comentário!"></textarea>
             <button id="button">Enviar</button>
         </div>
+        <div id="comentarios">
+            <p id="tasks" class="hide"></p>
+        </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
