@@ -47,15 +47,58 @@ marcaCarro.addEventListener("change", function(){
     }
 });
 
-var divContent = document.querySelector("#comentarios");
-var textarea = document.querySelector("#coments")
-
 var button = document.querySelector("#button");
-
 button.addEventListener("click", function(){
-    var paragrafo = document.querySelector("#tasks");
-    paragrafo.textContent = textarea
-    paragrafo.classList.remove("hide")
-    divContent.appendChild(paragrafo)
-    console.log(textarea)
+    var textarea = document.querySelector("#coments");
+    var divContent = document.querySelector("#comentarios");
+    var paragrafo = document.createElement("p")
+    var newDiv = document.createElement("div")
+    var deleteButton = document.createElement("button")
+    var changeButton = document.createElement("button")
+
+    // pegando os values
+    var textareaValue = textarea.value;
+    var modeloCarroValue = modeloCarro.value;
+    var marcaCarroValue = marcaCarro.value;
+    
+    // conteudo
+    paragrafo.innerHTML = marcaCarroValue + "<br>" + modeloCarroValue + "<br>" + textareaValue
+    paragrafo.style.backgroundColor = "white";
+    paragrafo.style.padding = "15px";
+    paragrafo.style.width = "21em";
+    paragrafo.style.height = "80px";
+    paragrafo.style.borderRadius = "5px";
+    paragrafo.style.marginTop = "30px";
+    paragrafo.style.marginLeft = "140px"
+
+    newDiv.style.display = "flex"
+
+    deleteButton.style.height = "80px"
+    deleteButton.style.marginTop = "30px"
+    deleteButton.style.marginLeft = "20px"
+    deleteButton.style.width = "50px"
+    deleteButton.style.borderRadius = "15px"
+    deleteButton.textContent = "delete"
+
+    changeButton.style.height = "80px"
+    changeButton.style.marginTop = "30px"
+    changeButton.style.marginLeft = "20px"
+    changeButton.style.width = "50px"
+    changeButton.style.borderRadius = "15px"
+    changeButton.textContent = "edit"
+
+    newDiv.appendChild(paragrafo)
+    newDiv.appendChild(deleteButton)
+    newDiv.appendChild(changeButton)
+    divContent.appendChild(newDiv);
+
+    // removendo paragrafo
+    deleteButton.addEventListener("click", function(){
+        paragrafo.parentNode.remove(true)
+    })
+
+    // editando mensagem
+    changeButton.addEventListener("click", function(){
+
+    })
 })
