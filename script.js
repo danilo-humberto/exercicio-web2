@@ -3,7 +3,7 @@ var modeloCarro = document.querySelector("#modelos-carro");
 
 marcaCarro.addEventListener("change", function(){
     modeloCarro.textContent = ''
-    if(marcaCarro.value === "porsche"){
+    if(marcaCarro.value === "Porsche"){
         modeloCarro.textContent = ''
         var optionPorsche1 = document.createElement("option");
         optionPorsche1.textContent = 'Porsche 911';
@@ -17,7 +17,7 @@ marcaCarro.addEventListener("change", function(){
         optionPorsche3.textContent = 'Porsche Panamera';
         modeloCarro.appendChild(optionPorsche3);
     }
-    else if(marcaCarro.value === "ferrari"){
+    else if(marcaCarro.value === "Ferrari"){
         modeloCarro.textContent = '';
         var optionFerrari1 = document.createElement("option");
         optionFerrari1.textContent = "Ferrari Portofino";
@@ -31,7 +31,7 @@ marcaCarro.addEventListener("change", function(){
         optionFerrari3.textContent = "Ferrari 296 GTB"
         modeloCarro.appendChild(optionFerrari3)
     }
-    else if(marcaCarro.value === "nissan"){
+    else if(marcaCarro.value === "Nissan"){
         modeloCarro.textContent = ''
         var optionNissan1 = document.createElement("option");
         optionNissan1.textContent = "Nissan Skyline R34";
@@ -70,6 +70,7 @@ button.addEventListener("click", function(){
     paragrafo.style.borderRadius = "5px";
     paragrafo.style.marginTop = "30px";
     paragrafo.style.marginLeft = "140px"
+    paragrafo.className = "p1"
 
     newDiv.style.display = "flex"
 
@@ -99,6 +100,20 @@ button.addEventListener("click", function(){
 
     // editando mensagem
     changeButton.addEventListener("click", function(){
+        marcaCarro.value = "start"
+        modeloCarro.textContent = ''
+        textarea.value = ''
 
+        var newMarcaCarro = marcaCarro.value
+        var newModeloCarro = modeloCarro.value
+        var newTextarea = textarea.value
+
+        button.addEventListener("click", () => {
+            newDiv.querySelector(".p1").innerHTML = newMarcaCarro + "<br>" + newModeloCarro + "<br>" + newTextarea
+
+            newDiv.firstChild.remove(true)
+            deleteButton.remove(true)
+            changeButton.remove(true)
+        })
     })
 })
